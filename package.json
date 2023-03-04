@@ -1,6 +1,6 @@
 {
   "name": "acuparse-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An API for Acuparse",
   "license": "MIT",
   "dependencies": {
@@ -12,8 +12,14 @@
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/znepb/acuparse-api"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "nodemon src/index.ts"
-  }
+  },
+  "main": "./dist/index.js",
+  "typings": "./src/index.d.ts"
 }
