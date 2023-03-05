@@ -304,3 +304,15 @@ interface Archive {
   main: ArchiveObject<ArchiveMain>;
   atlas?: ArchiveObject<ArchiveAtlas>;
 }
+
+declare class Acuparse {
+  key?: string;
+  endpoint: string;
+
+  constructor(endpoint: string, key?: string);
+  getHealth(): Promise<Health>;
+  getMain(units: "metric" | "imperial" = "metric"): Promise<Main | undefined>;
+  getArchive(
+    units: "metric" | "imperial" = "metric"
+  ): Promise<Archive | undefined>;
+}

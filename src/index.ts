@@ -8,7 +8,7 @@ import {
   Health,
   Main,
   MainResponse,
-} from ".";
+} from "./index.d";
 
 export default class Acuparse {
   public key?: string;

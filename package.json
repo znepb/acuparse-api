@@ -1,6 +1,6 @@
 {
   "name": "acuparse-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An API for Acuparse",
   "license": "MIT",
   "dependencies": {
