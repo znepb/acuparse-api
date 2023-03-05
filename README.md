@@ -8,9 +8,9 @@ This package comes with types built in!
 Connect to an AcuParse instance with the IP 192.168.0.32, and get the current outdoor temperature in degrees celcius:
 
 ```js
-const AcuParse = require("acuparse-api");
+const { Acuparse } = require("acuparse-api");
 
-const p = new AcuParse("http://192.168.0.32");
+const p = new Acuparse("http://192.168.0.32");
 
 p.getMain().then((main) => {
   // Expected output: The current temperature is X degrees celsius!

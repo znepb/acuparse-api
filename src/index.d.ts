@@ -8,7 +8,7 @@ export interface Health {
   database: string;
 }
 
-type directions =
+export type directions =
   | "N"
   | "NNE"
   | "NE"
@@ -25,7 +25,7 @@ type directions =
   | "WNW"
   | "NW"
   | "NWW";
-type trend = "rising" | "steady" | "falling";
+export type trend = "rising" | "steady" | "falling";
 
 // Main
 export interface MainResponse {
@@ -207,7 +207,7 @@ export interface Main {
 }
 
 // Archive
-interface ArchiveInformationMain {
+export interface ArchiveInformationMain {
   tempF_high: number;
   tempF_low: number;
   tempC_high: number;
@@ -232,7 +232,7 @@ interface ArchiveInformationMain {
   rainfall_MM_total: number;
 }
 
-interface ArchiveInformationAtlas {
+export interface ArchiveInformationAtlas {
   uvindex_high: number;
   uvindex_high_recorded: string;
   light_high: number;
@@ -243,7 +243,7 @@ interface ArchiveInformationAtlas {
   lightning_recorded: string;
 }
 
-interface ArchiveObject<T> {
+export interface ArchiveObject<T> {
   yesterday: T;
   week: T;
   month: T;
@@ -252,14 +252,14 @@ interface ArchiveObject<T> {
   ever: T;
 }
 
-interface ArchiveResponse {
+export interface ArchiveResponse {
   main: ArchiveObject<ArchiveInformationMain>;
   atlas?: ArchiveObject<ArchiveInformationAtlas>;
 }
 
 //
 
-interface ArchiveMain {
+export interface ArchiveMain {
   temp: {
     high: number;
     low: number;
@@ -286,7 +286,7 @@ interface ArchiveMain {
   rainfall: number;
 }
 
-interface ArchiveAtlas {
+export interface ArchiveAtlas {
   uv: {
     high: number;
     highRecordedAt: string;
@@ -299,20 +299,8 @@ interface ArchiveAtlas {
   lightningStrikes: number;
 }
 
-interface Archive {
+export interface Archive {
   units: "imperial" | "metric";
   main: ArchiveObject<ArchiveMain>;
   atlas?: ArchiveObject<ArchiveAtlas>;
-}
-
-declare class Acuparse {
-  key?: string;
-  endpoint: string;
-
-  constructor(endpoint: string, key?: string);
-  getHealth(): Promise<Health>;
-  getMain(units: "metric" | "imperial" = "metric"): Promise<Main | undefined>;
-  getArchive(
-    units: "metric" | "imperial" = "metric"
-  ): Promise<Archive | undefined>;
 }

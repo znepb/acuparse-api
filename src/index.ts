@@ -10,7 +10,7 @@ import {
   MainResponse,
 } from "./index.d";
 
-export default class Acuparse {
+class Acuparse {
   public key?: string;
   public endpoint: string;
 
@@ -362,3 +362,5 @@ export default class Acuparse {
     return ret;
   }
 }
+
+module.exports.Acuparse = Acuparse;
